@@ -1,0 +1,66 @@
+{
+	"name": "df_stores",
+	"properties": {
+		"folder": {
+			"name": "Bronze"
+		},
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "ds_stores_csv",
+						"type": "DatasetReference"
+					},
+					"name": "stores"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "ds_sql_stores",
+						"type": "DatasetReference"
+					},
+					"name": "tiendas"
+				}
+			],
+			"transformations": [],
+			"scriptLines": [
+				"source(output(",
+				"          Store_ID as string,",
+				"          Store_Name as string,",
+				"          City as string,",
+				"          Country as string,",
+				"          opened as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> stores",
+				"stores sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     input(",
+				"          Store_ID as string,",
+				"          Store_Name as string,",
+				"          City as string,",
+				"          Country as string,",
+				"          opened as string",
+				"     ),",
+				"     deletable:false,",
+				"     insertable:true,",
+				"     updateable:false,",
+				"     upsertable:false,",
+				"     format: 'table',",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true,",
+				"     errorHandlingOption: 'stopOnFirstError',",
+				"     mapColumn(",
+				"          Store_ID,",
+				"          Store_Name,",
+				"          City,",
+				"          Country,",
+				"          opened",
+				"     )) ~> tiendas"
+			]
+		}
+	}
+}
