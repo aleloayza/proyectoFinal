@@ -1,0 +1,44 @@
+{
+	"name": "ds_sql_products",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_sql_dw_apple",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Bronze"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "Product_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "Product_Name",
+				"type": "varchar"
+			},
+			{
+				"name": "Category_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "Launch_Date",
+				"type": "varchar"
+			},
+			{
+				"name": "Price",
+				"type": "varchar"
+			},
+			{
+				"name": "notes",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "BRONZE",
+			"table": "PRODUCTS"
+		}
+	}
+}

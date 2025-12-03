@@ -1,0 +1,59 @@
+{
+	"name": "df_sales",
+	"properties": {
+		"folder": {
+			"name": "Bronze"
+		},
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "ds_sales_csv",
+						"type": "DatasetReference"
+					},
+					"name": "sales"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "ds_sql_sales",
+						"type": "DatasetReference"
+					},
+					"name": "ventas"
+				}
+			],
+			"transformations": [],
+			"scriptLines": [
+				"source(output(",
+				"          sale_id as string,",
+				"          sale_date as string,",
+				"          store_id as string,",
+				"          product_id as string,",
+				"          quantity as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> sales",
+				"sales sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     input(",
+				"          sale_id as string,",
+				"          sale_date as string,",
+				"          store_id as string,",
+				"          product_id as string,",
+				"          quantity as string",
+				"     ),",
+				"     deletable:false,",
+				"     insertable:true,",
+				"     updateable:false,",
+				"     upsertable:false,",
+				"     format: 'table',",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true,",
+				"     errorHandlingOption: 'stopOnFirstError') ~> ventas"
+			]
+		}
+	}
+}

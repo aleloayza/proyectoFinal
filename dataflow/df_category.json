@@ -1,0 +1,60 @@
+{
+	"name": "df_category",
+	"properties": {
+		"folder": {
+			"name": "Bronze"
+		},
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "ds_category_csv",
+						"type": "DatasetReference"
+					},
+					"name": "category"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "ds_sql_category",
+						"type": "DatasetReference"
+					},
+					"name": "categoria"
+				}
+			],
+			"transformations": [],
+			"scriptLines": [
+				"source(output(",
+				"          category_id as string,",
+				"          category_name as string,",
+				"          extra_note as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> category",
+				"category sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     input(",
+				"          category_id as string,",
+				"          category_name as string,",
+				"          extra_note as string",
+				"     ),",
+				"     deletable:false,",
+				"     insertable:true,",
+				"     updateable:false,",
+				"     upsertable:false,",
+				"     format: 'table',",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true,",
+				"     errorHandlingOption: 'stopOnFirstError',",
+				"     mapColumn(",
+				"          category_id,",
+				"          category_name,",
+				"          extra_note",
+				"     )) ~> categoria"
+			]
+		}
+	}
+}

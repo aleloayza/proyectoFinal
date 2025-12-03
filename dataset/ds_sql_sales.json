@@ -1,0 +1,40 @@
+{
+	"name": "ds_sql_sales",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_sql_dw_apple",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Bronze"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "sale_id",
+				"type": "varchar"
+			},
+			{
+				"name": "sale_date",
+				"type": "varchar"
+			},
+			{
+				"name": "store_id",
+				"type": "varchar"
+			},
+			{
+				"name": "product_id",
+				"type": "varchar"
+			},
+			{
+				"name": "quantity",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "BRONZE",
+			"table": "SALES"
+		}
+	}
+}

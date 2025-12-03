@@ -1,0 +1,61 @@
+{
+	"name": "df_products",
+	"properties": {
+		"folder": {
+			"name": "Bronze"
+		},
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "ds_products_csv",
+						"type": "DatasetReference"
+					},
+					"name": "products"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "ds_sql_products",
+						"type": "DatasetReference"
+					},
+					"name": "productos"
+				}
+			],
+			"transformations": [],
+			"scriptLines": [
+				"source(output(",
+				"          Product_ID as string,",
+				"          Product_Name as string,",
+				"          Category_ID as string,",
+				"          Launch_Date as string,",
+				"          Price as string,",
+				"          notes as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> products",
+				"products sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     input(",
+				"          Product_ID as string,",
+				"          Product_Name as string,",
+				"          Category_ID as string,",
+				"          Launch_Date as string,",
+				"          Price as string,",
+				"          notes as string",
+				"     ),",
+				"     deletable:false,",
+				"     insertable:true,",
+				"     updateable:false,",
+				"     upsertable:false,",
+				"     format: 'table',",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true,",
+				"     errorHandlingOption: 'stopOnFirstError') ~> productos"
+			]
+		}
+	}
+}
