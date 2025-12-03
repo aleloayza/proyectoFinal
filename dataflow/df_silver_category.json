@@ -49,7 +49,12 @@
 				"     format: 'table',",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true,",
-				"     errorHandlingOption: 'stopOnFirstError') ~> sink1"
+				"     errorHandlingOption: 'stopOnFirstError',",
+				"     mapColumn(",
+				"          category_id,",
+				"          category_name,",
+				"          extra_note",
+				"     )) ~> sink1"
 			]
 		}
 	}
