@@ -1,0 +1,29 @@
+{
+	"name": "ds_gold_dim_date",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_sql_dw_apple",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Gold"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "date_key",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "sale_date",
+				"type": "date"
+			}
+		],
+		"typeProperties": {
+			"schema": "GOLD",
+			"table": "DIM_DATE"
+		}
+	}
+}
