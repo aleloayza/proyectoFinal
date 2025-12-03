@@ -1,0 +1,61 @@
+{
+	"name": "ds_gold_dim_sales",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_sql_dw_apple",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Gold"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "sale_fact_id",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "sale_id",
+				"type": "nvarchar"
+			},
+			{
+				"name": "date_key",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "store_key",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "product_key",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "quantity_sold",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "is_claimed",
+				"type": "bit"
+			},
+			{
+				"name": "claim_date",
+				"type": "date"
+			},
+			{
+				"name": "repair_status",
+				"type": "nvarchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "GOLD",
+			"table": "FACT_SALES"
+		}
+	}
+}

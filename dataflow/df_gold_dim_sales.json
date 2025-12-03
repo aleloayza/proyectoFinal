@@ -1,0 +1,69 @@
+{
+	"name": "df_gold_dim_sales",
+	"properties": {
+		"folder": {
+			"name": "Gold"
+		},
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "ds_silver_sales",
+						"type": "DatasetReference"
+					},
+					"name": "source1"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "ds_gold_dim_sales",
+						"type": "DatasetReference"
+					},
+					"name": "sink1"
+				}
+			],
+			"transformations": [],
+			"scriptLines": [
+				"source(output(",
+				"          sale_id as string,",
+				"          sale_date as date,",
+				"          store_id as string,",
+				"          product_id as string,",
+				"          quantity as integer",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     isolationLevel: 'READ_UNCOMMITTED',",
+				"     format: 'table') ~> source1",
+				"source1 sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     input(",
+				"          sale_fact_id as long,",
+				"          sale_id as string,",
+				"          date_key as integer,",
+				"          store_key as integer,",
+				"          product_key as integer,",
+				"          quantity_sold as integer,",
+				"          is_claimed as boolean,",
+				"          claim_date as date,",
+				"          repair_status as string",
+				"     ),",
+				"     deletable:false,",
+				"     insertable:true,",
+				"     updateable:false,",
+				"     upsertable:false,",
+				"     format: 'table',",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true,",
+				"     errorHandlingOption: 'stopOnFirstError',",
+				"     mapColumn(",
+				"          sale_id,",
+				"          quantity_sold = quantity,",
+				"          claim_date = sale_date",
+				"     )) ~> sink1"
+			]
+		}
+	}
+}
