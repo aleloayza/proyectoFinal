@@ -1,0 +1,57 @@
+{
+	"name": "df_warranty",
+	"properties": {
+		"folder": {
+			"name": "Bronze"
+		},
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "ds_warranty_csv",
+						"type": "DatasetReference"
+					},
+					"name": "warranty"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "ds_sql_warranty",
+						"type": "DatasetReference"
+					},
+					"name": "garantia"
+				}
+			],
+			"transformations": [],
+			"scriptLines": [
+				"source(output(",
+				"          claim_id as string,",
+				"          claim_date as string,",
+				"          sale_id as string,",
+				"          repair_status as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> warranty",
+				"warranty sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     input(",
+				"          claim_id as string,",
+				"          claim_date as string,",
+				"          sale_id as string,",
+				"          repair_status as string",
+				"     ),",
+				"     deletable:false,",
+				"     insertable:true,",
+				"     updateable:false,",
+				"     upsertable:false,",
+				"     format: 'table',",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true,",
+				"     errorHandlingOption: 'stopOnFirstError') ~> garantia"
+			]
+		}
+	}
+}
