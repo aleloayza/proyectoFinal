@@ -1,5 +1,5 @@
 {
-	"name": "df_silver_sales",
+	"name": "df_silver_warranty",
 	"properties": {
 		"folder": {
 			"name": "Silver"
@@ -9,7 +9,7 @@
 			"sources": [
 				{
 					"dataset": {
-						"referenceName": "ds_sql_sales",
+						"referenceName": "ds_sql_warranty",
 						"type": "DatasetReference"
 					},
 					"name": "source1"
@@ -18,7 +18,7 @@
 			"sinks": [
 				{
 					"dataset": {
-						"referenceName": "ds_silver_sales",
+						"referenceName": "ds_silver_warranty",
 						"type": "DatasetReference"
 					},
 					"name": "sink1"
@@ -34,29 +34,27 @@
 			],
 			"scriptLines": [
 				"source(output(",
+				"          claim_id as string,",
+				"          claim_date as string,",
 				"          sale_id as string,",
-				"          sale_date as string,",
-				"          store_id as string,",
-				"          product_id as string,",
-				"          quantity as string",
+				"          repair_status as string",
 				"     ),",
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     isolationLevel: 'READ_UNCOMMITTED',",
 				"     format: 'table') ~> source1",
-				"source1 derive(sale_date = trim(sale_date)) ~> derivedColumn1",
+				"source1 derive(claim_date = trim(claim_date)) ~> derivedColumn1",
 				"derivedColumn1 cast(output(",
-				"          sale_date as date 'dd-MM-yyyy'",
+				"          claim_date as date 'yyyy-MM-dd'",
 				"     ),",
 				"     errors: true) ~> cast1",
 				"cast1 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     input(",
+				"          claim_id as string,",
+				"          claim_date as date,",
 				"          sale_id as string,",
-				"          sale_date as date,",
-				"          store_id as string,",
-				"          product_id as string,",
-				"          quantity as integer",
+				"          repair_status as string",
 				"     ),",
 				"     deletable:false,",
 				"     insertable:true,",
@@ -65,14 +63,7 @@
 				"     format: 'table',",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true,",
-				"     errorHandlingOption: 'stopOnFirstError',",
-				"     mapColumn(",
-				"          sale_id,",
-				"          sale_date,",
-				"          store_id,",
-				"          product_id,",
-				"          quantity",
-				"     )) ~> sink1"
+				"     errorHandlingOption: 'stopOnFirstError') ~> sink1"
 			]
 		}
 	}

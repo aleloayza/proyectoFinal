@@ -1,0 +1,40 @@
+{
+	"name": "ds_silver_stores",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_sql_dw_apple",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Silver"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "store_id",
+				"type": "nvarchar"
+			},
+			{
+				"name": "store_name",
+				"type": "nvarchar"
+			},
+			{
+				"name": "city",
+				"type": "nvarchar"
+			},
+			{
+				"name": "country",
+				"type": "nvarchar"
+			},
+			{
+				"name": "opened",
+				"type": "date"
+			}
+		],
+		"typeProperties": {
+			"schema": "silver",
+			"table": "STORES"
+		}
+	}
+}

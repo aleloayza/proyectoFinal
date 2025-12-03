@@ -1,0 +1,32 @@
+{
+	"name": "ds_silver_category",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_sql_dw_apple",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Silver"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "category_id",
+				"type": "varchar"
+			},
+			{
+				"name": "category_name",
+				"type": "varchar"
+			},
+			{
+				"name": "extra_note",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "silver",
+			"table": "CATEGORY"
+		}
+	}
+}

@@ -18,7 +18,7 @@
 			"sinks": [
 				{
 					"dataset": {
-						"referenceName": "ds_sql_products",
+						"referenceName": "ds_silver_products",
 						"type": "DatasetReference"
 					},
 					"name": "sink1"
@@ -52,24 +52,23 @@
 				"          Product_ID,",
 				"          Product_Name,",
 				"          Category_ID,",
-				"          Launch_Date,",
-				"          Price",
+				"          Launch_Date",
 				"     ),",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true) ~> select1",
 				"select1 derive(Launch_Date = trim(Launch_Date)) ~> derivedColumn1",
 				"derivedColumn1 cast(output(",
-				"          Launch_Date as date 'dd/MM/yyyy'",
+				"          Launch_Date as date 'yyyy-MM-dd'",
 				"     ),",
 				"     errors: true) ~> cast1",
 				"cast1 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     input(",
-				"          Product_ID as string,",
-				"          Product_Name as string,",
-				"          Category_ID as string,",
-				"          Launch_Date as string,",
-				"          Price as string,",
+				"          product_id as string,",
+				"          product_name as string,",
+				"          category_id as string,",
+				"          launch_date as date,",
+				"          price as decimal(10,2),",
 				"          notes as string",
 				"     ),",
 				"     deletable:false,",
@@ -81,11 +80,10 @@
 				"     skipDuplicateMapOutputs: true,",
 				"     errorHandlingOption: 'stopOnFirstError',",
 				"     mapColumn(",
-				"          Product_ID,",
-				"          Product_Name,",
-				"          Category_ID,",
-				"          Launch_Date,",
-				"          Price",
+				"          product_id = Product_ID,",
+				"          product_name = Product_Name,",
+				"          category_id = Category_ID,",
+				"          launch_date = Launch_Date",
 				"     )) ~> sink1"
 			]
 		}
