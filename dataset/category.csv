@@ -1,0 +1,22 @@
+category_id,category_name,extra_note
+CAT-1,Laptop,
+CAT-2,Audio,
+CAT-3,Tablet,
+CAT-4,Smartphone,
+CAT-5,Wearable,
+CAT-6,Streaming Device,
+CAT-7,Desktop,
+CAT-8,Subscription Service,
+CAT-9,Smart Speaker,
+CAT-10,Accessories,
+cat-11 ,Accessories  ,duplicated id lower
+CAT-2, AuDio ,extra case mismatch
+,CAT-12 MissingID,
+CAT-13, ,missing name
+CAT-14,Headphones,     trailing spaces    
+CAT-15,Speakers,€199
+CAT-16,Accessories,Ñúñez
+CAT-17,Streaming Device,duplicate
+CAT-17,Streaming Device,duplicate
+CAT-18,Accessory-Extra,typo-in-id
+"CAT-19","Smart, Gadgets",comma in name
