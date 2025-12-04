@@ -63,7 +63,13 @@
 				"     format: 'table',",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true,",
-				"     errorHandlingOption: 'stopOnFirstError') ~> sink1"
+				"     errorHandlingOption: 'stopOnFirstError',",
+				"     mapColumn(",
+				"          claim_id,",
+				"          claim_date,",
+				"          sale_id,",
+				"          repair_status",
+				"     )) ~> sink1"
 			]
 		}
 	}

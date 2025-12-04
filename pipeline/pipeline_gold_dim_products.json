@@ -1,9 +1,9 @@
 {
-	"name": "pipeline_silver_sales",
+	"name": "pipeline_gold_dim_products",
 	"properties": {
 		"activities": [
 			{
-				"name": "Data flow1",
+				"name": "pipeline_gold_dim_products",
 				"type": "ExecuteDataFlow",
 				"dependsOn": [],
 				"policy": {
@@ -15,6 +15,10 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
+					"dataflow": {
+						"referenceName": "df_gold_dim_products",
+						"type": "DataFlowReference"
+					},
 					"compute": {
 						"coreCount": 8,
 						"computeType": "General"
@@ -24,7 +28,7 @@
 			}
 		],
 		"folder": {
-			"name": "SILVER"
+			"name": "GOLD"
 		},
 		"annotations": []
 	}
