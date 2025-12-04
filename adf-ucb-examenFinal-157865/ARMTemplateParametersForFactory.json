@@ -1,0 +1,24 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "adf-ucb-examenFinal-157865"
+		},
+		"ls_sa_apple_sales_connectionString": {
+			"value": ""
+		},
+		"ls_sql_dw_apple_password": {
+			"value": ""
+		},
+		"ls_sql_dw_apple_properties_typeProperties_server": {
+			"value": "sql-ucb-sisinfo12152.database.windows.net"
+		},
+		"ls_sql_dw_apple_properties_typeProperties_database": {
+			"value": "bronze-examenFinal"
+		},
+		"ls_sql_dw_apple_properties_typeProperties_userName": {
+			"value": "aleloayza"
+		}
+	}
+}
