@@ -1,0 +1,76 @@
+store_key;Store_ID;Store_Name;City;Country
+1;ST-1;Apple Fifth Avenue;New York;United States
+2;ST-2;Apple Union Square;San Francisco;United States
+3;ST-3;Apple Michigan Avenue;Chicago;United States
+4;ST-4;Apple The Grove;Los Angeles;United States
+5;ST-5;'Apple SoHo';New York;United States
+6;ST-6;Apple Grand Central;New York;United States
+7;ST-7;Apple Beverly Center;Los Angeles;United States
+8;ST-8;Apple Pioneer Place;Portland;United States
+9;ST-9;Apple Park Visitor Center;Cupertino;United States
+10;ST-10;Apple South Coast Plaza;Costa Mesa;United States
+11;ST-11;Apple Ala Moana;Honolulu ;United States
+12;ST-12;Apple North Michigan Avenue;Chicago;United States
+13;ST-13;Apple Walnut Street;Philadelphia;United States
+14;ST-14;Apple The Americana at Brand;Glendale ;United States
+15;ST-15;Apple Downtown Brooklyn;Brooklyn ;United States
+16;ST-16;Apple Regent Street;London;United Kingdom
+17;ST-17;Apple Covent Garden;London;United Kingdom
+18;ST-18;Apple Champs-Elysees;Paris;France
+19;ST-19;Apple Opera;Paris;France
+20;ST-20;Apple Kaerntner Strasse;Vienna;Austria
+21;ST-21;Apple Passeig de Gracia;Barcelona;Spain
+22;ST-22;Apple Piazza Liberty;Milan;Italy
+23;ST-23;Apple Via del Corso;Rome;Italy
+24;ST-24;Apple Kurfuerstendamm;Berlin;Germany
+25;ST-25;Apple Schildergasse;Cologne;Germany
+26;ST-26;Apple Leidseplein;Amsterdam;Netherlands
+27;ST-27;Apple Rosenstrasse;Munich;Germany
+28;ST-28;Apple Brompton Road;London;United Kingdom
+29;ST-29;Apple Galeries Lafayette;Paris;France
+30;ST-30;Apple Dubai Mall;Dubai;UAE
+31;ST-31;Apple Shinjuku;Tokyo;
+32;ST-32;Apple Omotesando;Tokyo;Japan   
+33;ST-33;Apple Marunouchi;Tokyo;Japan
+34;ST-34;Apple Fukuoka;Fukuoka;Japan
+35;ST-35;Apple Shanghai IFC;;China
+36;ST-36;Apple Nanjing East;Shanghai;China
+37;ST-37;Apple Sanlitun;'Beijing';China
+38;ST-38;  Apple Taikoo Li ;Chengdu;China
+39;ST-39;Apple Taipei 101;Taipei;Taiwan
+40;ST-40;Apple Causeway Bay;Hong Kong;China
+41;ST-41;Apple Central World;Bangkok;Thailand
+42;ST-42;Apple Orchard Road;Singapore;Singapore
+43;ST-43;Apple Cotai Central;Macau;China
+44;ST-44;Apple Kyoto;Kyoto;Japan
+45;ST-45;Apple Jewel Changi Airport;Singapore;Singapore
+46;ST-46;Apple Eaton Centre;Toronto;Canada
+47;ST-47;Apple Rideau Centre;Ottawa;Canada
+48;ST-48;12345;Montreal;Canada
+49;ST-49;Apple Yorkdale;Toronto;Canada
+50;ST-50;Apple Metrotown;Burnaby;Canada
+51;ST-51;Apple Sydney;Sydney;Australia
+52;ST-52;Apple Chadstone;Melbourne;Australia
+53;ST-53;Apple Brisbane;Brisbane;Australia
+54;ST-54;Apple Bondi;Bondi;Australia
+55;ST-55;Apple Highpoint;Melbourne;Australia
+56;ST-56;Apple Southland;Cheltenham;Australia
+57;ST-57;Apple Yas Mall;Abu Dhabi;UAE
+58;ST-58;Apple The Dubai Mall;Dubai;UAE
+59;ST-59;Apple Mall of the Emirates;Dubai;UAE
+60;ST-60;Apple Antara;Mexico City;Mexico
+61;ST-61;Apple Santa Fe;Mexico City;Mexico
+62;ST-62;Apple Via Santa Fe;Mexico City;Mexico
+63;ST-63;Apple Parque La Colina;Bogota;Colombia
+64;ST-64;Apple Andino;Bogota;Colombia
+65;ST-65;Apple Iconsiam;Bangkok;Thailand
+66;ST-66;Apple Orchard Road;Singapore;Singapore
+67;ST-67;Apple Chadstone;Melbourne;Australia
+68;ST-68;Apple Champs-Elysees;Paris;France
+69;ST-69;Apple The Dubai Mall;Dubai;UAE
+70;ST-70;Apple Gangnam;Seoul;South Korea
+71;ST-71;Apple Yeouido;Seoul;South Korea
+72;ST-72;Apple Kumamoto;Kumamoto;Japan
+73;ST-73;Apple Covent Garden;London;United Kingdom
+74;ST-74;Apple Central World;Bangkok;Thailand
+75;ST-75;Apple Beijing SKP;Beijing;China
